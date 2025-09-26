@@ -23,30 +23,36 @@ git clone https://github.com/username/your-repo.git
 cd your-repo
 ```
 
+---
+
 🛠️ How to Use
 
-Click on the category buttons in the sidebar to switch between cheat sheets.
+- Click on the category buttons in the sidebar to switch between cheat sheets.
 
-Click the 🌙 / ☀️ button to toggle dark/light mode.
+- Click the 🌙 / ☀️ button to toggle dark/light mode.
 
-Your theme preference is saved automatically for next time.
+- Your theme preference is saved automatically for next time.
+
+---
 
 📁 Notes
 
 The cheat sheet content is stored in the notes/ folder:
 
-css.js
+- css.js
 
-javascript.js
+- javascript.js
 
-express.js
+- express.js
 
-mongoDB.js
+- mongoDB.js
 
 You can edit these files to add or update content.
 
+---
+
 🧑‍💻 Tech Stack
 
-React
+- React
 
-Plain CSS (no Tailwind)
+- Plain CSS

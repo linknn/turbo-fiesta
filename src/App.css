@@ -73,10 +73,12 @@ body {
   background: transparent;
   color: inherit;
   cursor: pointer;
+  transition: opacity 0.5s;
 }
 
 .nav-button:hover {
   background: #e5e7eb;
+  opacity: 50%;
 }
 
 .dark .nav-button:hover {

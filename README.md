@@ -1,16 +1,52 @@
-# React + Vite
+# 📝 Cheat Sheet App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, dark/light toggle cheat sheet app for CSS, JavaScript, Node & Express, and MongoDB.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚡ Features
 
-## React Compiler
+- 🌙 **Dark & Light Mode** – toggle your preferred theme
+- 💾 **Persistent Theme** – remembers your last choice
+- 🗂 **Multiple Categories** – CSS, JavaScript, Node & Express, MongoDB
+- 📖 **Clean, simple interface** – easy to read and navigate
+- 🖥️ **Plain React & CSS** – no Tailwind, no extra libraries
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/username/your-repo.git
+cd your-repo
+```
+
+🛠️ How to Use
+
+Click on the category buttons in the sidebar to switch between cheat sheets.
+
+Click the 🌙 / ☀️ button to toggle dark/light mode.
+
+Your theme preference is saved automatically for next time.
+
+📁 Notes
+
+The cheat sheet content is stored in the notes/ folder:
+
+css.js
+
+javascript.js
+
+express.js
+
+mongoDB.js
+
+You can edit these files to add or update content.
+
+🧑‍💻 Tech Stack
+
+React
+
+Plain CSS (no Tailwind)

@@ -9,6 +9,7 @@ import miscNotes from "./notes/misc";
 import "./App.css";
 
 const notes = {
+  // Add new pages of notes here
   CSS: cssNotes,
   JavaScript: jsNotes,
   "Node & Express": expressNotes,

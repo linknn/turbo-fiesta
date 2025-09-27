@@ -1,0 +1,56 @@
+.sidebar {
+  width: 16rem;
+  background: #ffffff;
+  border-right: 1px solid #d1d5db;
+  padding: 1rem;
+}
+
+.app--dark .sidebar {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.sidebar__button:hover {
+  background: #e5e7eb;
+  opacity: 50%;
+}
+
+.app--dark .sidebar__button:hover {
+  background: #374151;
+}
+
+.sidebar__button--active {
+  background: #3b82f6;
+  transition: opacity 0.5s;
+  color: #ffffff;
+}

@@ -1,0 +1,9 @@
+.sidebar__theme-toggle,
+.theme-toggle {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.25rem;
+}

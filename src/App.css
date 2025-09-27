@@ -1,118 +1,12 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Theme Wrappers */
-.light {
-  background: #f9fafb;
-  color: #1a1a1a;
-}
-
-.dark {
-  background: #111827;
-  color: #f3f4f6;
-}
-
-/* Layout */
 .app {
   display: flex;
   height: 100vh;
 }
-
-/* Sidebar */
-.sidebar {
-  width: 16rem;
-  background: #ffffff;
-  border-right: 1px solid #d1d5db;
-  padding: 1rem;
-}
-
-.dark .sidebar {
+.app--dark {
   background: #1f2937;
-  border-color: #374151;
+  color: #f3f4f6;
 }
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-.sidebar-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.25rem; /* make emoji a bit bigger */
-}
-
-/* Nav */
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.nav-button {
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border: none;
-  border-radius: 6px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  transition: opacity 0.5s;
-}
-
-.nav-button:hover {
-  background: #e5e7eb;
-  opacity: 50%;
-}
-
-.dark .nav-button:hover {
-  background: #374151;
-}
-
-.nav-button.active {
-  background: #3b82f6;
-  transition: opacity 0.5s;
-  color: #ffffff;
-}
-
-/* Main Content */
-.main {
-  flex: 1;
-  padding: 1.5rem;
-  overflow-y: auto;
-}
-
-.main-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.notes {
-  background: #e5e7eb;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
-
-.dark .notes {
-  background: #1f2937;
+.app--light {
+  background: #f9fafb;
+  color: #1a1a1a;
 }

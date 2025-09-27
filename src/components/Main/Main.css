@@ -1,0 +1,34 @@
+.main {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.main__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.main__notes {
+  background: #e5e7eb;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.app--dark .main__notes {
+  background: #1f2937;
+}
+.main__search-result {
+  margin-bottom: 1.5rem;
+}
+.main__search-category {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.main__no-results {
+  font-style: italic;
+}

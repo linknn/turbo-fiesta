@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Main from "./components/Main/Main";
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 
 import cssNotes from "./notes/css";
 import jsNotes from "./notes/javascript";
@@ -29,7 +32,6 @@ export default function CheatSheetApp() {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  // Get search results across all categories
   const getSearchResults = () => {
     const results = {};
     const query = searchQuery.toLowerCase();
@@ -47,70 +49,23 @@ export default function CheatSheetApp() {
   const searchResults = searchQuery ? getSearchResults() : null;
 
   return (
-    <div className={darkMode ? "dark" : "light"}>
-      <div className="app">
-        {/* Sidebar */}
-        <aside className="sidebar">
-          <div className="sidebar-header">
-            <h2 className="sidebar-title">Cheat Sheet</h2>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="theme-toggle"
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {darkMode ? "☀️" : "🌙"}
-            </button>
-          </div>
+    <div className={darkMode ? "app app--dark" : "app app--light"}>
+      <Sidebar
+        notes={notes}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      >
+        <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+      </Sidebar>
 
-          {/* Search Bar */}
-          <input
-            type="text"
-            placeholder="Search notes..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-bar"
-          />
-
-          <nav className="nav">
-            {Object.keys(notes).map((category) => (
-              <button
-                key={category}
-                onClick={() => {
-                  setActiveCategory(category);
-                  setSearchQuery(""); // reset search when clicking category
-                }}
-                className={`nav-button ${activeCategory === category ? "active" : ""}`}
-              >
-                {category}
-              </button>
-            ))}
-          </nav>
-        </aside>
-
-        {/* Main Content */}
-        <main className="main">
-          {searchQuery ? (
-            <>
-              <h1 className="main-title">Search Results for: "{searchQuery}"</h1>
-              {Object.keys(searchResults).length > 0 ? (
-                Object.entries(searchResults).map(([category, lines]) => (
-                  <div key={category} className="search-result-category">
-                    <h2>{category}</h2>
-                    <pre className="notes">{lines.join("\n")}</pre>
-                  </div>
-                ))
-              ) : (
-                <p>No results found.</p>
-              )}
-            </>
-          ) : (
-            <>
-              <h1 className="main-title">{activeCategory}</h1>
-              <pre className="notes">{notes[activeCategory]}</pre>
-            </>
-          )}
-        </main>
-      </div>
+      <Main
+        activeCategory={activeCategory}
+        notes={notes}
+        searchQuery={searchQuery}
+        searchResults={searchResults}
+      />
     </div>
   );
 }

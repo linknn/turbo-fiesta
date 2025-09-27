@@ -133,5 +133,5 @@ Age < 30:
 
 json-server --watch db.json --id _id --port 3001
 
-git add. && git commit -m "" && git push
+git add . && git commit -m "" && git push
 `,nv={CSS:Co,JavaScript:Vo,"Node & Express":Lo,MongoDB:Ko,Miscellaneous:Jo};function wo(){const[O,il]=qn.useState(()=>localStorage.getItem("theme")==="dark"),[L,r]=qn.useState("CSS");return qn.useEffect(()=>{localStorage.setItem("theme",O?"dark":"light")},[O]),tt.jsx("div",{className:O?"dark":"light",children:tt.jsxs("div",{className:"app",children:[tt.jsxs("aside",{className:"sidebar",children:[tt.jsxs("div",{className:"sidebar-header",children:[tt.jsx("h2",{className:"sidebar-title",children:"Cheat Sheet"}),tt.jsx("button",{onClick:()=>il(!O),className:"theme-toggle","aria-label":O?"Switch to light mode":"Switch to dark mode",children:O?"☀️":"🌙"})]}),tt.jsx("nav",{className:"nav",children:Object.keys(nv).map(G=>tt.jsx("button",{onClick:()=>r(G),className:`nav-button ${L===G?"active":""}`,children:G},G))})]}),tt.jsxs("main",{className:"main",children:[tt.jsx("h1",{className:"main-title",children:L}),tt.jsx("pre",{className:"notes",children:nv[L]})]})]})})}Zo.createRoot(document.getElementById("root")).render(tt.jsx(qo.StrictMode,{children:tt.jsx(wo,{})}));

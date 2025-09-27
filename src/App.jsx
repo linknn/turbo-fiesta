@@ -4,6 +4,7 @@ import cssNotes from "./notes/css";
 import jsNotes from "./notes/javascript";
 import expressNotes from "./notes/express";
 import mongoNotes from "./notes/mongoDB";
+import miscNotes from "./notes/misc";
 
 import "./App.css";
 
@@ -12,6 +13,7 @@ const notes = {
   JavaScript: jsNotes,
   "Node & Express": expressNotes,
   MongoDB: mongoNotes,
+  Miscellaneous: miscNotes,
 };
 
 export default function CheatSheetApp() {

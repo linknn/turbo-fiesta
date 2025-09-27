@@ -1,12 +1,11 @@
-const cssNotes = `
-visibility doesn't transition in css
+const cssNotes = `visibility doesn't transition in css
 
 --- Margins shorthand ---
 margin: 1em;
-margin: -3px;
-margin: 5% auto;
-margin: 1em auto 2em;
-margin: 2px 1em 0 auto;
+margin: -3px;                     ALL
+margin: 5% auto;            T/B         L/R
+margin: 1em auto 2em;       T    L/R     B
+margin: 2px 1em 0 auto;     T   R    B   L
 
 gap: 20px 40px;
 

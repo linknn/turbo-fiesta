@@ -8,15 +8,17 @@ import jsNotes from "./notes/javascript";
 import expressNotes from "./notes/express";
 import mongoNotes from "./notes/mongoDB";
 import miscNotes from "./notes/misc";
+import bemNotes from "./notes/bem";
 
 import "./components/base/reset.css";
 import "./App.css";
 
 const notes = {
   CSS: cssNotes,
+  BEM: bemNotes,
   JavaScript: jsNotes,
-  "Node & Express": expressNotes,
   MongoDB: mongoNotes,
+  "Node & Express": expressNotes,
   Miscellaneous: miscNotes,
 };
 

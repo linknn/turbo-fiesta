@@ -16,13 +16,16 @@ export default function Sidebar({
         {children /* Theme toggle will be passed in here */}
       </div>
 
-      <input
-        type="text"
-        placeholder="Search notes..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="sidebar__search"
-      />
+      <div className="sidebar__search-wrapper">
+        <span className="sidebar__search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Search notes..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="sidebar__search"
+        />
+      </div>
 
       <nav className="sidebar__nav">
         {Object.keys(notes).map((category) => (

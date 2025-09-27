@@ -3,6 +3,7 @@
   background: #ffffff;
   border-right: 1px solid #d1d5db;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .app--dark .sidebar {
@@ -53,4 +54,41 @@
   background: #3b82f6;
   transition: opacity 0.5s;
   color: #ffffff;
+}
+
+.sidebar__search-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.sidebar__search {
+  display: block;
+  width: 170px; /*TODO - FIX ME*/
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  background: #f9fafb;
+  transition: border 0.2s ease-in-out;
+}
+
+.sidebar__search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none; /* icon doesn't block input interaction */
+  opacity: 0.6;
+}
+
+.sidebar__search:focus {
+  border-color: #3b82f6;
+}
+
+.app--dark .sidebar__search {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f3f4f6;
 }

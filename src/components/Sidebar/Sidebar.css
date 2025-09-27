@@ -92,3 +92,33 @@
 .sidebar__search:focus {
   border-color: #3b82f6;
 }
+
+/* easter egg */
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.sidebar__title--rainbow {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #33cc33,
+    #0066ff,
+    #6600cc,
+    #ff3399,
+    #ff0000
+  );
+  background-size: 1000% 1000%;
+  animation: rainbow 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

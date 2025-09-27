@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
@@ -51,24 +51,53 @@ export default function CheatSheetApp() {
 
   const searchResults = searchQuery ? getSearchResults() : null;
 
-  return (
-    <div className={darkMode ? "app app--dark" : "app app--light"}>
-      <Sidebar
-        notes={notes}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      >
-        <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-      </Sidebar>
+  const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight"];
+  const [easterEggActive, setEasterEggActive] = useState(false);
 
-      <Main
-        activeCategory={activeCategory}
-        notes={notes}
-        searchQuery={searchQuery}
-        searchResults={searchResults}
-      />
-    </div>
+  const [keySequence, setKeySequence] = useState([]);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      setKeySequence((prev) => {
+        const newSequence = [...prev, e.key].slice(-konamiCode.length);
+
+        if (JSON.stringify(newSequence) === JSON.stringify(konamiCode)) {
+          console.log("🎉 Konami Code Activated!");
+          audioRef.current?.play();
+          setEasterEggActive(true);
+        }
+
+        return newSequence;
+      });
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  return (
+    <>
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}easter-egg.wav`} preload="auto" />
+      <div className={darkMode ? "app app--dark" : "app app--light"}>
+        <Sidebar
+          notes={notes}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          easterEggActive={easterEggActive}
+        >
+          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        </Sidebar>
+
+        <Main
+          activeCategory={activeCategory}
+          notes={notes}
+          searchQuery={searchQuery}
+          searchResults={searchResults}
+        />
+      </div>
+    </>
   );
 }

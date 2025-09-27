@@ -87,6 +87,7 @@ body {
 
 .nav-button.active {
   background: #3b82f6;
+  transition: opacity 0.5s;
   color: #ffffff;
 }
 

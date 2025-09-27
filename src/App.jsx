@@ -9,6 +9,7 @@ import expressNotes from "./notes/express";
 import mongoNotes from "./notes/mongoDB";
 import miscNotes from "./notes/misc";
 
+import "./components/base/reset.css";
 import "./App.css";
 
 const notes = {

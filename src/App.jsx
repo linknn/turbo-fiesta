@@ -63,7 +63,7 @@ export default function CheatSheetApp() {
         const newSequence = [...prev, e.key].slice(-konamiCode.length);
 
         if (JSON.stringify(newSequence) === JSON.stringify(konamiCode)) {
-          console.log("🎉 Konami Code Activated!");
+          console.log("🎉 You're a nerd!");
           audioRef.current?.play();
           setEasterEggActive(true);
         }

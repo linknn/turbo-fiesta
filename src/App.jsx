@@ -94,7 +94,7 @@ export default function CheatSheetApp() {
       if ((widthDiff > threshold || heightDiff > threshold) && !devtoolsOpen) {
         devtoolsOpen = true;
         console.log(
-          "%cYou found the secret console! 🤫",
+          "%cShh code is sleeping here 🤫😴💤",
           "color: cyan; font-size: 18px; font-weight: bold;"
         );
         setDevtoolsActive(true); //start animation

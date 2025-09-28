@@ -8,12 +8,12 @@ export default function Sidebar({
   searchQuery,
   setSearchQuery,
   children,
-  easterEggActive,
+  konamiActive,
 }) {
   return (
     <aside className="sidebar">
       <div className="sidebar__header">
-        <h2 className={`sidebar__title ${easterEggActive ? "sidebar__title--rainbow" : ""}`}>
+        <h2 className={`sidebar__title ${konamiActive ? "sidebar__title--rainbow" : ""}`}>
           Cheat Sheet
         </h2>
         {children /* Theme toggle will be passed in here */}

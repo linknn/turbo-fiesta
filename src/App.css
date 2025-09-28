@@ -1,6 +1,16 @@
+@keyframes matrixScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
 .app {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 .app--dark {
   background: #111827;
@@ -9,4 +19,20 @@
 .app--light {
   background: #f9fafb;
   color: #1a1a1a;
+}
+
+.app--matrix::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* don’t block clicks */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.15) 0px,
+    rgba(0, 255, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-size: 100% 200%;
+  animation: matrixScroll 5s linear infinite;
 }

@@ -9,6 +9,7 @@ import expressNotes from "./notes/express";
 import mongoNotes from "./notes/mongoDB";
 import miscNotes from "./notes/misc";
 import bemNotes from "./notes/bem";
+import bashNotes from "./notes/git-bash";
 
 import "./components/base/reset.css";
 import "./App.css";
@@ -16,6 +17,7 @@ import "./App.css";
 const notes = {
   CSS: cssNotes,
   BEM: bemNotes,
+  "Git Bash": bashNotes,
   JavaScript: jsNotes,
   MongoDB: mongoNotes,
   "Node & Express": expressNotes,

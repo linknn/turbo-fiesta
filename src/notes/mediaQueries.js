@@ -1,3 +1,0 @@
-const meadiaQuerie
-
-"Media Queries": ``,

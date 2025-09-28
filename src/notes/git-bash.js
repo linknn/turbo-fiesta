@@ -21,5 +21,32 @@ git push -u origin main
 (SSH auth)
 git remote add origin git@github.com:USERNAME/PROJECT-NAME.git
 git push -u origin main
+
+Clone repo to local
+git clone REPO-URL
+
+
+COMMIT HISTORY
+git commit --amend          updates the most recent commit
+git reset HEAD              resets all staged files to most recent commit
+git reset HEAD~1            removes most recent commit from commit history
+by default git reset keeps all changes in the working tree
+to remove all changes from the working tree use --hard
+
+
+BRANCHES
+git branch                      list all branches
+git branch <branchname>         create new branch with name <branchname>
+git branch -d <branchname>      delete <branchname>
+git switch <branchname>         switch to different branch
+git switch -c <branchname>      creates and switches to new branch
+
+Merging branches
+(Merge <branch-b> into <branch-a>)
+git switch <branch-a>           switch to branch you to want to merge into
+git merge <branch-b>
+
+git restore <filepath>          restores files to most recent commit
+
 `;
 export default bashNotes;

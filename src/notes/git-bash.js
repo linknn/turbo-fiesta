@@ -48,5 +48,17 @@ git merge <branch-b>
 
 git restore <filepath>          restores files to most recent commit
 
+
+mkdir folder_1 folder_2 folder_3        creates 3 folders
+touch folder_1/file1.txt                 creates file1.txt inside existing folder_1
+    use code instead of touch if you want the file to also open and be ready to start coding in
+touch folder_1/file1.txt folder_1/file2.txt     creates 2 files in the same directory that you aren't currently in
+
+
+curl http://localhost:3001                      use in terminal to test web server responses, inspect HTTP headers, and debug network-related issues. NOTE: if using localhost make sure to have npm run dev running.
+
+split terminal ctrl+shft+5
+add terminal ctrl+(backtick) while already in terminal
+
 `;
 export default bashNotes;

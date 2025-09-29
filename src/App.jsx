@@ -10,6 +10,7 @@ import mongoNotes from "./notes/mongoDB";
 import miscNotes from "./notes/misc";
 import bemNotes from "./notes/bem";
 import bashNotes from "./notes/git-bash";
+import errorNotes from "./notes/error-handling";
 
 import "./components/base/reset.css";
 import "./App.css";
@@ -17,6 +18,7 @@ import "./App.css";
 const notes = {
   CSS: cssNotes,
   BEM: bemNotes,
+  "Error Handling": errorNotes,
   "Git Bash": bashNotes,
   JavaScript: jsNotes,
   MongoDB: mongoNotes,

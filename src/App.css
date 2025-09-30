@@ -39,5 +39,7 @@
 
 .app__body {
   display: flex;
-  margin-top: 60px;
+  margin-top: 60px; /*match header height*/
+  flex: 1; /*fill all space below header*/
+  min-width: 0; /* prevent flex children from forcing fixed width*/
 }

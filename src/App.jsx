@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
+import Overlay from "./components/Overlay/Overlay";
 
 import cssNotes from "./notes/css";
 import jsNotes from "./notes/javascript";
@@ -32,10 +33,6 @@ const groupedNotes = {
     Misc: miscNotes,
   },
 };
-
-// const flattenNotes = (groups) =>
-//   Object.values(groups).reduce((acc, group) => ({ ...acc, ...group }), {});
-// const allNotes = flattenNotes(groupedNotes);
 
 const notes = Object.values(groupedNotes).reduce((acc, group) => ({ ...acc, ...group }), {});
 
@@ -97,6 +94,7 @@ export default function CheatSheetApp() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
   // devtools
   useEffect(() => {
     let devtoolsOpen = false;
@@ -119,6 +117,15 @@ export default function CheatSheetApp() {
       }
     };
     const interval = setInterval(checkDevTools, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // overlay
+  const [showOverlay, setShowOverlay] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowOverlay(true);
+    }, 1800000); //1800000 = 30 minutes
     return () => clearInterval(interval);
   }, []);
 
@@ -150,6 +157,7 @@ export default function CheatSheetApp() {
             searchResults={searchResults}
           />
         </div>
+        <Overlay show={showOverlay} onClose={() => setShowOverlay(false)} />
       </div>
     </>
   );

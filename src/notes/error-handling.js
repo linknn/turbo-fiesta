@@ -31,7 +31,7 @@ function orFailWithNotFound(resourceName = "Resource") {
 
 module.exports = {
   BAD_REQUEST,
-  NOT_FOUND, //taken care of in orFail function, may not need to be exported
+  NOT_FOUND, 
   INTERNAL_SERVER_ERROR,
   orFailWithNotFound,
 };

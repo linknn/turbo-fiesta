@@ -22,6 +22,28 @@
   font-weight: bold;
 }
 
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shadowPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  }
+}
+
 .header__title--rainbow {
   background: linear-gradient(
     270deg,
@@ -33,8 +55,11 @@
     #ff3399,
     #ff0000
   );
-  background-size: 1000% 1000%;
-  -webkit-background-clip: text;
+
+  background-size: 400% 400%; /* plenty of room for animation */
+  background-clip: text; /* for Firefox */
+  -webkit-background-clip: text; /* for Chrome/Safari */
   -webkit-text-fill-color: transparent;
-  animation: rainbow 4s linear infinite;
+
+  animation: rainbow 6s linear infinite, shadowPulse 2s ease-in-out infinite;
 }

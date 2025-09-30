@@ -12,12 +12,14 @@ import miscNotes from "./notes/misc";
 import bemNotes from "./notes/bem";
 import bashNotes from "./notes/git-bash";
 import errorNotes from "./notes/error-handling";
+import featureNotes from "./notes/new-features";
 
 import "./components/base/reset.css";
 import "./App.css";
 import Header from "./components/Header/Header";
 
 const groupedNotes = {
+  "New Features": { ToDo: featureNotes },
   Frontend: {
     CSS: cssNotes,
     BEM: bemNotes,

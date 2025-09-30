@@ -11,12 +11,13 @@
 }
 
 .main__notes {
-  background: #e5e7eb;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  overflow-x: auto;
-  white-space: pre-wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+
+  /* Prevent weird collapsing/overflow */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .app--dark .main__notes {

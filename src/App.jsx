@@ -36,6 +36,7 @@ const groupedNotes = {
   },
 };
 
+// flatten the notes
 const notes = Object.values(groupedNotes).reduce((acc, group) => ({ ...acc, ...group }), {});
 
 export default function CheatSheetApp() {
@@ -62,10 +63,13 @@ export default function CheatSheetApp() {
     const results = {};
     const query = searchQuery.toLowerCase();
 
-    Object.entries(notes).forEach(([category, content]) => {
-      const lines = content.split("\n").filter((line) => line.toLowerCase().includes(query));
-      if (lines.length > 0) {
-        results[category] = lines;
+    Object.entries(notes).forEach(([category, noteList]) => {
+      const matches = noteList.filter(
+        (note) =>
+          note.title.toLowerCase().includes(query) || note.content.toLowerCase().includes(query)
+      );
+      if (matches.length > 0) {
+        results[category] = matches;
       }
     });
 

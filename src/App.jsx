@@ -15,16 +15,28 @@ import errorNotes from "./notes/error-handling";
 import "./components/base/reset.css";
 import "./App.css";
 
-const notes = {
-  CSS: cssNotes,
-  BEM: bemNotes,
-  "Error Handling": errorNotes,
-  "Git Bash": bashNotes,
-  JavaScript: jsNotes,
-  MongoDB: mongoNotes,
-  "Node & Express": expressNotes,
-  Miscellaneous: miscNotes,
+const groupedNotes = {
+  Frontend: {
+    CSS: cssNotes,
+    BEM: bemNotes,
+    JavaScript: jsNotes,
+  },
+  Backend: {
+    "Error Handling": errorNotes,
+    MongoDB: mongoNotes,
+    "Node & Express": expressNotes,
+  },
+  Miscellaneous: {
+    "Git Bash": bashNotes,
+    Misc: miscNotes,
+  },
 };
+
+// const flattenNotes = (groups) =>
+//   Object.values(groups).reduce((acc, group) => ({ ...acc, ...group }), {});
+// const allNotes = flattenNotes(groupedNotes);
+
+const notes = Object.values(groupedNotes).reduce((acc, group) => ({ ...acc, ...group }), {});
 
 export default function CheatSheetApp() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -118,7 +130,7 @@ export default function CheatSheetApp() {
         }`}
       >
         <Sidebar
-          notes={notes}
+          groupedNotes={groupedNotes}
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
           searchQuery={searchQuery}

@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 
 export default function Sidebar({
-  notes,
+  groupedNotes,
   activeCategory,
   setActiveCategory,
   searchQuery,
@@ -31,19 +31,24 @@ export default function Sidebar({
       </div>
 
       <nav className="sidebar__nav">
-        {Object.keys(notes).map((category) => (
-          <button
-            key={category}
-            onClick={() => {
-              setActiveCategory(category);
-              setSearchQuery("");
-            }}
-            className={`sidebar__button ${
-              activeCategory === category ? "sidebar__button--active" : ""
-            }`}
-          >
-            {category}
-          </button>
+        {Object.entries(groupedNotes).map(([groupName, groupNotes]) => (
+          <div key={groupName} className="sidebar__group">
+            <h3 className="sidebar__group-title">{groupName}</h3>
+            {Object.keys(groupNotes).map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setSearchQuery("");
+                }}
+                className={`sidebar__button ${
+                  activeCategory === category ? "sidebar__button--active" : ""
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         ))}
       </nav>
     </aside>

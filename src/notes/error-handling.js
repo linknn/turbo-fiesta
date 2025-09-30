@@ -1,11 +1,14 @@
 const errorNotes = `utiles/errors.js
 
 status codes helpers
+
+//400 Bad Request is for client-side input errors (e.g., missing required fields, invalid formats)
 const BAD_REQUEST = {
   code: 400,
   message: "Invalid request",
 };
 
+// 404 Not Found is for missing resources, not invalid inputs
 const NOT_FOUND = {
   code: 404,
   message: "Resource not found",

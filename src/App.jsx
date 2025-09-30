@@ -14,6 +14,7 @@ import errorNotes from "./notes/error-handling";
 
 import "./components/base/reset.css";
 import "./App.css";
+import Header from "./components/Header/Header";
 
 const groupedNotes = {
   Frontend: {
@@ -129,24 +130,26 @@ export default function CheatSheetApp() {
           devtoolsActive ? "app--matrix" : ""
         }`}
       >
-        <Sidebar
-          groupedNotes={groupedNotes}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          konamiActive={konamiActive}
-          devtoolsActive={devtoolsActive}
-        >
-          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-        </Sidebar>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} konamiActive={konamiActive} />
 
-        <Main
-          activeCategory={activeCategory}
-          notes={notes}
-          searchQuery={searchQuery}
-          searchResults={searchResults}
-        />
+        <div className="app__body">
+          <Sidebar
+            groupedNotes={groupedNotes}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            konamiActive={konamiActive}
+            devtoolsActive={devtoolsActive}
+          ></Sidebar>
+
+          <Main
+            activeCategory={activeCategory}
+            notes={notes}
+            searchQuery={searchQuery}
+            searchResults={searchResults}
+          />
+        </div>
       </div>
     </>
   );

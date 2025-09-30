@@ -1,0 +1,40 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid #d1d5db;
+  background: inherit;
+  z-index: 1000;
+}
+
+.app--dark .header {
+  border-color: #374151;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header__title--rainbow {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #33cc33,
+    #0000ff,
+    #6600cc,
+    #ff3399,
+    #ff0000
+  );
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 4s linear infinite;
+}

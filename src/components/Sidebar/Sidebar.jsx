@@ -7,17 +7,15 @@ export default function Sidebar({
   setActiveCategory,
   searchQuery,
   setSearchQuery,
-  children,
-  konamiActive,
 }) {
   return (
     <aside className="sidebar">
-      <div className="sidebar__header">
+      {/* <div className="sidebar__header">
         <h2 className={`sidebar__title ${konamiActive ? "sidebar__title--rainbow" : ""}`}>
           Cheat Sheet
         </h2>
-        {children /* Theme toggle will be passed in here */}
-      </div>
+        {children /* Theme toggle will be passed in here 
+      </div> */}
 
       <div className="sidebar__search-wrapper">
         <span className="sidebar__search-icon">🔍</span>

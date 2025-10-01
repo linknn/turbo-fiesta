@@ -14,5 +14,7 @@ Add matrix to header
 Fix margin on main title
 
 bug crawl around screen for dev easter egg
+
+move todo to a separate icon outside of aside
 `;
 export default featureNotes;

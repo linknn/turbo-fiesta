@@ -50,7 +50,7 @@ export default function CheatSheetApp() {
   const [searchQuery, setSearchQuery] = useState("");
   const [konamiActive, setKonamiActive] = useState(false);
   const [devtoolsActive, setDevtoolsActive] = useState(false);
-  const [keySequence, setKeySequence] = useState([]);
+  const [, setKeySequence] = useState([]);
 
   const audioRef = useRef(null);
 
@@ -78,9 +78,9 @@ export default function CheatSheetApp() {
 
   // easter eggs
   // konami
-  const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
   useEffect(() => {
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight"];
     const handleKeyDown = (e) => {
       setKeySequence((prev) => {
         const newSequence = [...prev, e.key].slice(-konamiCode.length);

@@ -13,5 +13,8 @@ npm install pg-promise
 
 in a vite project add --open to the dev script for npm run dev to suto open in browser
 
+  // eslint-disable-next-line no-unused-vars
+this comment tells eslint when a variable looks unused to just ignore it
+
 `;
 export default miscNotes;

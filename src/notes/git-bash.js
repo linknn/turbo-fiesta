@@ -40,6 +40,8 @@ git branch <branchname>         create new branch with name <branchname>
 git branch -d <branchname>      delete <branchname>
 git switch <branchname>         switch to different branch
 git switch -c <branchname>      creates and switches to new branch
+git push origin <branchname>    push changes to branch
+git checkout <branchname>       switch to work on banch
 
 Merging branches
 (Merge <branch-b> into <branch-a>)

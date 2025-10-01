@@ -13,6 +13,7 @@ import bemNotes from "./notes/bem";
 import bashNotes from "./notes/git-bash";
 import errorNotes from "./notes/error-handling";
 import featureNotes from "./notes/new-features";
+import authNotes from "./notes/id-auth";
 
 import "./components/base/reset.css";
 import "./App.css";
@@ -28,6 +29,7 @@ const groupedNotes = {
   Backend: {
     "Error Handling": errorNotes,
     MongoDB: mongoNotes,
+    "Id and Auth": authNotes,
     "Node & Express": expressNotes,
   },
   Miscellaneous: {

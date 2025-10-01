@@ -11,5 +11,7 @@ Install the npm module called pg-promise first:
 
 npm install pg-promise
 
+in a vite project add --open to the dev script for npm run dev to suto open in browser
+
 `;
 export default miscNotes;

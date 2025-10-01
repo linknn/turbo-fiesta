@@ -161,6 +161,23 @@ export default function CheatSheetApp() {
             searchResults={searchResults}
           />
         </div>
+
+        <button
+          className={`floating__button ${
+            activeCategory === "ToDo" ? "floating__button--active" : ""
+          }`}
+          aria-label="Show future features"
+          onClick={() => {
+            console.log("FAB clicked");
+            // clear search so Main will render the category view
+            setSearchQuery("");
+            // switch the active category to your feature note
+            setActiveCategory("ToDo");
+          }}
+        >
+          📝
+        </button>
+
         <Overlay show={showOverlay} onClose={() => setShowOverlay(false)} />
       </div>
     </>

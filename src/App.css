@@ -43,3 +43,20 @@
   flex: 1; /*fill all space below header*/
   min-width: 0; /* prevent flex children from forcing fixed width*/
 }
+
+.floating__button {
+  position: fixed; /* stays in place when scrolling */
+  bottom: 1rem; /* distance from bottom */
+  right: 1rem; /* distance from right */
+  background: white; /* simple white background */
+  border: 1px solid #ccc;
+  border-radius: 50%; /* makes it circular */
+  width: 3rem; /* size */
+  height: 3rem;
+  font-size: 1.5rem; /* emoji size */
+  display: flex; /* center emoji */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* slight shadow */
+}

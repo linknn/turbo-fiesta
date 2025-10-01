@@ -2,6 +2,12 @@ import React from "react";
 import "./Main.css";
 
 export default function Main({ activeCategory, notes, searchQuery, searchResults }) {
+  console.log("Main render:");
+  console.log("Active category:", activeCategory);
+  console.log("Notes[activeCategory]:", notes[activeCategory]);
+  console.log("Type:", typeof notes[activeCategory]);
+  console.log("Search query:", searchQuery);
+
   return (
     <main className="main">
       {searchQuery ? (

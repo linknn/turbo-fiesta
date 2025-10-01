@@ -4,43 +4,23 @@ import Main from "./components/Main/Main";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import Overlay from "./components/Overlay/Overlay";
 
-import cssNotes from "./notes/css";
-import jsNotes from "./notes/javascript";
-import expressNotes from "./notes/express";
-import mongoNotes from "./notes/mongoDB";
-import miscNotes from "./notes/misc";
-import bemNotes from "./notes/bem";
-import bashNotes from "./notes/git-bash";
-import errorNotes from "./notes/error-handling";
-import featureNotes from "./notes/new-features";
-import authNotes from "./notes/id-auth";
-
 import "./components/base/reset.css";
 import "./App.css";
 import Header from "./components/Header/Header";
 
-const groupedNotes = {
-  "New Features": { ToDo: featureNotes },
-  Frontend: {
-    CSS: cssNotes,
-    BEM: bemNotes,
-    JavaScript: jsNotes,
-  },
-  Backend: {
-    "Error Handling": errorNotes,
-    MongoDB: mongoNotes,
-    "Id and Auth": authNotes,
-    "Node & Express": expressNotes,
-  },
-  Miscellaneous: {
-    "Git Bash": bashNotes,
-    Misc: miscNotes,
-  },
-};
+import { useNotes } from "./hooks/useNotes";
 
-const notes = Object.values(groupedNotes).reduce((acc, group) => ({ ...acc, ...group }), {});
+// const flattenNotes = (grouped) =>
+//   Object.values(grouped).reduce((acc, group) => ({ ...acc, ...group }), {});
+
+// const notes = {
+//   ...flattenNotes(groupedNotes),
+//   Todo: featureNotes,
+// };
 
 export default function CheatSheetApp() {
+  const { groupedNotes, notes } = useNotes();
+
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("theme");
     return saved === "dark";
@@ -168,7 +148,6 @@ export default function CheatSheetApp() {
           }`}
           aria-label="Show future features"
           onClick={() => {
-            console.log("FAB clicked");
             // clear search so Main will render the category view
             setSearchQuery("");
             // switch the active category to your feature note

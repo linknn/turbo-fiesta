@@ -16,5 +16,7 @@ in a vite project add --open to the dev script for npm run dev to suto open in b
   // eslint-disable-next-line no-unused-vars
 this comment tells eslint when a variable looks unused to just ignore it
 
+Middleware is software that acts as a "middleman", enabling different applications, systems, and components to communicate and share data by providing a translation or communication layer between them. Can be described as software glue.
+
 `;
 export default miscNotes;

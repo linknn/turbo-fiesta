@@ -9,14 +9,9 @@ import "./App.css";
 import Header from "./components/Header/Header";
 
 import { useNotes } from "./hooks/useNotes";
-
-// const flattenNotes = (grouped) =>
-//   Object.values(grouped).reduce((acc, group) => ({ ...acc, ...group }), {});
-
-// const notes = {
-//   ...flattenNotes(groupedNotes),
-//   Todo: featureNotes,
-// };
+import useThemePersistence from "./hooks/useThemePersistence";
+import useKonamiCode from "./hooks/useKonamiCode";
+import useDevtoolsDetect from "./hooks/useDevtoolsDetect";
 
 export default function CheatSheetApp() {
   const { groupedNotes, notes } = useNotes();
@@ -30,14 +25,12 @@ export default function CheatSheetApp() {
   const [searchQuery, setSearchQuery] = useState("");
   const [konamiActive, setKonamiActive] = useState(false);
   const [devtoolsActive, setDevtoolsActive] = useState(false);
-  const [, setKeySequence] = useState([]);
 
   const audioRef = useRef(null);
 
-  //theme on refresh
-  useEffect(() => {
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
+  useThemePersistence(darkMode);
+  useKonamiCode(setKonamiActive, audioRef);
+  useDevtoolsDetect(setDevtoolsActive);
 
   // serach results
   const getSearchResults = () => {
@@ -55,54 +48,6 @@ export default function CheatSheetApp() {
   };
 
   const searchResults = searchQuery ? getSearchResults() : null;
-
-  // easter eggs
-  // konami
-
-  useEffect(() => {
-    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight"];
-    const handleKeyDown = (e) => {
-      setKeySequence((prev) => {
-        const newSequence = [...prev, e.key].slice(-konamiCode.length);
-
-        if (JSON.stringify(newSequence) === JSON.stringify(konamiCode)) {
-          console.log("🎉 You're a nerd!");
-          audioRef.current?.play();
-          setKonamiActive(true);
-        }
-
-        return newSequence;
-      });
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  // devtools
-  useEffect(() => {
-    let devtoolsOpen = false;
-    const threshold = 160; //pixels of difference when DevTools is docked
-
-    const checkDevTools = () => {
-      const widthDiff = window.outerWidth - window.innerWidth;
-      const heightDiff = window.outerHeight - window.innerHeight;
-
-      if ((widthDiff > threshold || heightDiff > threshold) && !devtoolsOpen) {
-        devtoolsOpen = true;
-        console.log(
-          "%cShh code is sleeping here 🤫😴💤",
-          "color: cyan; font-size: 18px; font-weight: bold;"
-        );
-        setDevtoolsActive(true); //start animation
-      } else if (widthDiff <= threshold && heightDiff <= threshold && devtoolsOpen) {
-        devtoolsOpen = false;
-        setDevtoolsActive(false);
-      }
-    };
-    const interval = setInterval(checkDevTools, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   // overlay
   const [showOverlay, setShowOverlay] = useState(false);

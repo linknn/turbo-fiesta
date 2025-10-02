@@ -395,6 +395,9 @@ bug crawl around screen for dev easter egg
 change color scheme - especially for light theme
 
 emoji for todo isnt centered and give it some hover effects
+
+change out all colors for root names for future theme changes
+    find a way to have it rotate through themes based on time of year?
 `,tm=`
 Identification: some kind of value given to something to distinguish it
 Authentication: checking that the value and what it was given to are accurate
@@ -407,7 +410,7 @@ Based on that authentication ( showing id ) authorization is given because of th
 
 
 id: place an order with phone/name/email
-authen:
+authen: entering your pin or passcode to log in
 author: show id to get package, use qr to pickup; cop asks for id
 
 
@@ -442,7 +445,7 @@ module.exports.login = (req, res) => {
     });
 };
 
-JWT (Json Web Token)
+JWT (Json Web Token) ------------------------------
 const jwt = require("jsonwebtoken");
     header - meta info about toke
     payload - holds the data
@@ -458,6 +461,8 @@ expiresIn: '120ms' // 120 miliseconds
 expiresIn: '15m' // 15 minutes
 expiresIn: '2h' // 2 hours
 expiresIn: '7d' // 7 days
+
+the strong secret key to sign JWT tokens should be kept in an environment variable, never commit your .env to the repo
 
 `;function am(){const _={Frontend:{CSS:w0,BEM:F0,JavaScript:J0},Backend:{"Error Handling":P0,MongoDB:W0,"Id and Auth":tm,"Node & Express":k0},Miscellaneous:{"Git Bash":I0,Misc:$0}},B={...(v=>Object.values(v).reduce((U,j)=>({...U,...j}),{}))(_),ToDo:lm};return{groupedNotes:_,notes:B}}function em(_){mt.useEffect(()=>{localStorage.setItem("theme",_?"dark":"light")},[_])}function um(_,X){mt.useEffect(()=>{const B=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight"];let v=[];const U=j=>{v=[...v,j.key].slice(-B.length),JSON.stringify(v)===JSON.stringify(B)&&(console.log("🎉 You're a nerd!"),X.current?.play(),_(!0))};return window.addEventListener("keydown",U),()=>window.removeEventListener("keydown",U)},[_,X])}function nm(_){mt.useEffect(()=>{let X=!1;const B=160,U=setInterval(()=>{const j=window.outerWidth-window.innerWidth,F=window.outerHeight-window.innerHeight;(j>B||F>B)&&!X?(X=!0,console.log("%cShh code is sleeping here 🤫😴💤","color: cyan; font-size: 18px; font-weight: bold;"),_(!0)):j<=B&&F<=B&&X&&(X=!1,_(!1))},1e3);return()=>clearInterval(U)},[_])}function im(){const{groupedNotes:_,notes:X}=am(),[B,v]=mt.useState(()=>localStorage.getItem("theme")==="dark"),[U,j]=mt.useState("CSS"),[F,rl]=mt.useState(""),[N,T]=mt.useState(!1),[R,nl]=mt.useState(!1),P=mt.useRef(null);em(B),um(T,P),nm(nl);const zl=F?(()=>{const Kl={},vt=F.toLowerCase();return Object.entries(X).forEach(([Tl,wl])=>{const J=wl.split(`
 `).filter(jl=>jl.toLowerCase().includes(vt));J.length>0&&(Kl[Tl]=J)}),Kl})():null,[Ll,Ml]=mt.useState(!1);return mt.useEffect(()=>{const Kl=setInterval(()=>{Ml(!0)},18e5);return()=>clearInterval(Kl)},[]),Z.jsxs(Z.Fragment,{children:[Z.jsx("audio",{ref:P,src:"/turbo-fiesta/easter-egg.wav",preload:"auto"}),Z.jsxs("div",{className:`app ${B?"app app--dark":"app app--light"} ${R?"app--matrix":""}`,children:[Z.jsx(K0,{darkMode:B,setDarkMode:v,konamiActive:N}),Z.jsxs("div",{className:"app__body",children:[Z.jsx(C0,{groupedNotes:_,activeCategory:U,setActiveCategory:j,searchQuery:F,setSearchQuery:rl,konamiActive:N,devtoolsActive:R}),Z.jsx(Z0,{activeCategory:U,notes:X,searchQuery:F,searchResults:zl})]}),Z.jsx("button",{className:`floating__button ${U==="ToDo"?"floating__button--active":""}`,"aria-label":"Show future features",onClick:()=>{rl(""),j("ToDo")},children:"📝"}),Z.jsx(V0,{show:Ll,onClose:()=>Ml(!1)})]})]})}X0.createRoot(document.getElementById("root")).render(Z.jsx(H0.StrictMode,{children:Z.jsx(im,{})}));

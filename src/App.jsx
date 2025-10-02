@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
-import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import Overlay from "./components/Overlay/Overlay";
 
 import "./components/base/reset.css";
@@ -28,11 +27,12 @@ export default function CheatSheetApp() {
 
   const audioRef = useRef(null);
 
+  // hooks
   useThemePersistence(darkMode);
   useKonamiCode(setKonamiActive, audioRef);
   useDevtoolsDetect(setDevtoolsActive);
 
-  // serach results
+  // search results
   const getSearchResults = () => {
     const results = {};
     const query = searchQuery.toLowerCase();

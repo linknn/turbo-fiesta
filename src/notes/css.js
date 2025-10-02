@@ -31,6 +31,16 @@ Vendor prefixes:
 @media (max-width: 375px) { /* medium smartphones */ }
 @media (max-width: 320px) { /* small smartphones */ }
 @media screen and (max-width: 568px) and (max-height: 320px) { /* iPhone 5 */ }
+
+:root is a selector for the highest-level element in the doc (<html>)
+handy for declaring css variables (custom properties)
+    ex:
+    :root {
+    --color-accent-light: #e07a5f;
+    }
+    some__selector {
+    color: var(--color-accent-light);
+    }
 `;
 
 export default cssNotes;

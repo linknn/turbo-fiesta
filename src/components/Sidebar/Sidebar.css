@@ -1,14 +1,14 @@
 .sidebar {
   width: 16rem;
-  background: #ffffff;
-  border-right: 1px solid #d1d5db;
+  background: var(--color-sidebar-light);
+  border-right: 1px solid var(--color-border-light);
   padding: 1rem;
   box-sizing: border-box;
 }
 
 .app--dark .sidebar {
-  background: #1f2937;
-  border-color: #374151;
+  background: var(--color-sidebar-dark);
+  border-right: 1px solid var(--color-border-dark);
 }
 
 .sidebar__header {
@@ -51,9 +51,14 @@
 }
 
 .sidebar__button--active {
-  background: #3b82f6;
+  background: var(--color-accent-light);
+  color: #fff;
   transition: opacity 0.5s;
-  color: #ffffff;
+}
+
+.app--dark .sidebar__button--active {
+  background: var(--color-accent-dark);
+  color: #fff;
 }
 
 .sidebar__search-wrapper {

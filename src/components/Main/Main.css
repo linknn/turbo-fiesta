@@ -11,7 +11,8 @@
 }
 
 .main__notes {
-  background: #e5e7eb;
+  background: var(--color-note-bg-light);
+  color: var(--color-note-text-light);
   padding: 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
@@ -20,15 +21,28 @@
 }
 
 .app--dark .main__notes {
-  background: #1f2937;
+  background: var(--color-note-bg-dark);
+  color: var(--color-note-text-dark);
 }
+
 .main__search-result {
   margin-bottom: 1.5rem;
 }
 .main__search-category {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: var(--color-accent-light);
 }
+
+.app--dark .main__search-category {
+  color: var(--color-accent-dark);
+}
+
 .main__no-results {
   font-style: italic;
+  color: var(--color-secondary-light);
+}
+
+.app--dark .main__no-results {
+  color: var(--color-secondary-dark);
 }

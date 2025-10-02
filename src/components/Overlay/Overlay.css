@@ -9,8 +9,8 @@
 }
 
 .overlay__content {
-  background: white;
-  color: black;
+  background: var(--color-note-bg-light);
+  color: var(--color-note-text-light);
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
@@ -18,12 +18,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.app--dark .overlay__content {
+  background: var(--color-note-bg-dark);
+  color: var(--color-note-text-dark);
+}
+
 .overlay__button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
-  background: #3b82f6;
+  background: var(--color-accent-dark);
   color: white;
   cursor: pointer;
+}
+
+.overlay__button:hover {
+  filter: brightness(1.1);
 }

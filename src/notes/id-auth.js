@@ -10,7 +10,7 @@ Based on that authentication ( showing id ) authorization is given because of th
 
 
 id: place an order with phone/name/email
-authen:
+authen: entering your pin or passcode to log in
 author: show id to get package, use qr to pickup; cop asks for id
 
 
@@ -45,7 +45,7 @@ module.exports.login = (req, res) => {
     });
 };
 
-JWT (Json Web Token)
+JWT (Json Web Token) ------------------------------
 const jwt = require("jsonwebtoken");
     header - meta info about toke
     payload - holds the data
@@ -61,6 +61,8 @@ expiresIn: '120ms' // 120 miliseconds
 expiresIn: '15m' // 15 minutes
 expiresIn: '2h' // 2 hours
 expiresIn: '7d' // 7 days
+
+the strong secret key to sign JWT tokens should be kept in an environment variable, never commit your .env to the repo
 
 `;
 export default authNotes;

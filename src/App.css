@@ -34,16 +34,7 @@
   display: flex;
   height: 100vh;
   position: relative;
-}
-
-.app--light {
-  background: var(--color-bg-light);
-  color: var(--color-text-light);
-}
-
-.app--dark {
-  background: var(--color-bg-dark);
-  color: var(--color-text-dark);
+  flex-direction: column;
 }
 
 .app--matrix::before {
@@ -84,4 +75,49 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* slight shadow */
+}
+/* Light background with warm parchment texture */
+.app--light {
+  background: radial-gradient(
+    circle at top left,
+    #fff4dc 0%,
+    /* pale parchment */ #f8e6c1 70%,
+    /* warm tan */ #ff7518 100% /* true pumpkin orange 🎃 */
+  );
+  color: var(--color-text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.app--light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark background with faint spooky texture */
+.app--dark {
+  background: radial-gradient(circle at top left, #1a0b2e 0%, #0d1117 70%, #000 100%);
+  color: var(--color-text-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.app--dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.15; /* stronger grain */
+  pointer-events: none;
 }

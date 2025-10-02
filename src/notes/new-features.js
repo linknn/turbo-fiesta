@@ -14,6 +14,8 @@ Fix margin on main title
 
 bug crawl around screen for dev easter egg
 
-move todo to a separate icon outside of aside
+change color scheme - especially for light theme
+
+emoji for todo isnt centered and give it some hover effects
 `;
 export default featureNotes;

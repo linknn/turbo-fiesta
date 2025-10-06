@@ -10,7 +10,7 @@ export default function Overlay({ show, onClose }) {
         <h2>Time to drink water!</h2>
         <p>Take a quick stretch too</p>
         <button className="overlay__button" onClick={onClose}>
-          Got it!
+          화이팅 ✊
         </button>
       </div>
     </div>

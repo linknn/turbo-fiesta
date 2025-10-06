@@ -14,11 +14,10 @@ Fix margin on main title
 
 bug crawl around screen for dev easter egg
 
-change color scheme - especially for light theme
-
 emoji for todo isnt centered and give it some hover effects
 
 change out all colors for root names for future theme changes
     find a way to have it rotate through themes based on time of year?
+    make an interactive way to change the color schemes
 `;
 export default featureNotes;

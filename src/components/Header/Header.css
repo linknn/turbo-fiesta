@@ -1,16 +1,17 @@
 .header {
-  position: fixed;
+  position: fixed; /* use fixed so header stays at top while notes scroll */
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 60px; /* header height - change if you prefer */
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
-  border-bottom: 1px solid var(--color-border-light);
-  background: inherit;
   z-index: 1000;
+  background: inherit; /* keeps theme background or you can set a solid color */
+  border-bottom: 1px solid var(--color-border-light);
+  box-sizing: border-box;
 }
 
 .app--dark .header {

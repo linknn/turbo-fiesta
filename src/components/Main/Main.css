@@ -1,7 +1,10 @@
 .main {
-  flex: 1;
-  padding: 1.5rem;
-  overflow-y: auto;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* we do NOT want the main container itself to scroll */
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .main__title {
@@ -11,13 +14,17 @@
 }
 
 .main__notes {
+  margin-top: 1rem;
   background: var(--color-note-bg-light);
   color: var(--color-note-text-light);
+  font-size: 0.875rem;
   padding: 1rem;
   border-radius: 8px;
-  font-size: 0.875rem;
-  overflow-x: auto;
+  box-sizing: border-box;
   white-space: pre-wrap;
+  flex: 1 1 auto; /* take remaining vertical space inside .main */
+  overflow-y: auto; /* <--- the notes area scrolls */
+  overflow-x: hidden; /* remove horizontal scroll unless needed */
 }
 
 .app--dark .main__notes {

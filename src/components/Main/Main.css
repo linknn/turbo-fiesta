@@ -19,8 +19,6 @@
 .main__notes {
   position: relative;
   margin-top: 1rem;
-  background: var(--color-note-bg-light);
-  color: var(--color-note-text-light);
   font-size: 0.875rem;
   padding: 1rem;
   border-radius: 8px;
@@ -36,7 +34,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   opacity: 0.1;
   pointer-events: none;
   border-radius: 8px;
@@ -45,8 +42,8 @@
 
 .app--light .main__notes {
   position: relative;
-  background-color: #dba87e;
-  color: #1a1a1a;
+  background: var(--color-note-bg-light);
+  color: var(--color-note-text-light);
   z-index: 1; /* above texture layer */
 }
 
@@ -55,7 +52,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   opacity: 0.08;
   pointer-events: none;
   border-radius: 8px;

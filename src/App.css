@@ -1,23 +1,3 @@
-:root {
-  /* ===== Light Theme (Fall / Pumpkin) ===== */
-  --color-bg-light: #f8e6c1; /* warm parchment background */
-  --color-sidebar-light: #fff4dc; /* pale pumpkin sidebar */
-  --color-text-light: #1a1a1a; /* dark text */
-  --color-note-bg-light: #dba87e; /* warm tan notes */
-  --color-note-text-light: #1a1a1a; /* dark readable text */
-  --color-accent-light: #e07a5f; /* pumpkin orange accent */
-  --color-border-light: #d6b18a; /* subtle border */
-
-  /* ===== Dark Theme (Halloween Night) ===== */
-  --color-bg-dark: #0d1117; /* near-black deep night */
-  --color-sidebar-dark: #161b22; /* dark sidebar */
-  --color-text-dark: #f4f1de; /* light cream text */
-  --color-note-bg-dark: #2c2c2c; /* dark brown/charcoal notes */
-  --color-note-text-dark: #f4f1de; /* light readable text */
-  --color-accent-dark: #f77f00; /* glowing orange accent */
-  --color-border-dark: #5ec61a; /* muted dark border */
-}
-
 /* ---------- Base app ---------- */
 .app {
   display: flex;

@@ -86,3 +86,10 @@
 .app--dark .main__no-results {
   color: var(--color-secondary-dark);
 }
+
+.main__notes__content {
+  display: block;
+  padding: 1rem;
+  width: 100%; /* optional, ensures full width inside pre */
+  box-sizing: border-box;
+}

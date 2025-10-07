@@ -2,6 +2,17 @@ const errorNotes = `utiles/errors.js
 
 status codes helpers
 
+200 -> OK -> get put patch
+201 -> created -> post
+204 -> No Content -> delete
+
+400
+401
+403
+404
+422 not process entity
+
+
 //400 Bad Request is for client-side input errors (e.g., missing required fields, invalid formats)
 const BAD_REQUEST = {
   code: 400,

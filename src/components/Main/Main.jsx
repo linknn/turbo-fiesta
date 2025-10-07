@@ -11,7 +11,9 @@ export default function Main({ activeCategory, notes, searchQuery, searchResults
             Object.entries(searchResults).map(([category, lines]) => (
               <div key={category} className="main__search-result">
                 <h2 className="main__search-category">{category}</h2>
-                <pre className="main__notes">{lines.join("\n")}</pre>
+                <pre className="main__notes">
+                  <code className="main__notes__content">{lines.join("\n")}</code>
+                </pre>
               </div>
             ))
           ) : (

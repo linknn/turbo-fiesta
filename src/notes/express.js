@@ -11,6 +11,15 @@ router.delete('/books/:id', deleteBook);
 imports are written as const and require the path
     const express = require('express');
 
+//converts JSON into Javascript objects
+app.use(express.json());
+  If youre request comes out undefined its probably because you dont have this
+
+express doesn't work with return 
+  express is a chain it sends or it moves on
+
+Middleware is software that acts as a "middleman", enabling different applications, systems, and components to communicate and share data by providing a translation or communication layer between them. Can be described as software glue.
+
     -------- Node.js -------
 
 to make app auto update each time you save install nodemon and run app with nodemon app.js

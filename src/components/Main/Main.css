@@ -1,3 +1,5 @@
+/* ---------- Main layout---------- */
+
 .main {
   flex: 1 1 auto;
   display: flex;
@@ -13,7 +15,9 @@
   margin-bottom: 1rem;
 }
 
+/* ---------- Notes ---------- */
 .main__notes {
+  position: relative;
   margin-top: 1rem;
   background: var(--color-note-bg-light);
   color: var(--color-note-text-light);
@@ -27,14 +31,47 @@
   overflow-x: hidden; /* remove horizontal scroll unless needed */
 }
 
+/* ---------- Notes texture overlay for light theme ---------- */
+.app--light .main__notes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  opacity: 0.1;
+  pointer-events: none;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.app--light .main__notes {
+  position: relative;
+  background-color: #dba87e;
+  color: #1a1a1a;
+  z-index: 1; /* above texture layer */
+}
+
+/* ---------- Notes texture overlay for dark theme ---------- */
+.app--dark .main__notes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.08;
+  pointer-events: none;
+  border-radius: 8px;
+  z-index: 0;
+}
+
 .app--dark .main__notes {
   background: var(--color-note-bg-dark);
   color: var(--color-note-text-dark);
 }
 
+/* ---------- Search results ---------- */
 .main__search-result {
   margin-bottom: 1.5rem;
 }
+
 .main__search-category {
   font-weight: bold;
   margin-bottom: 0.5rem;

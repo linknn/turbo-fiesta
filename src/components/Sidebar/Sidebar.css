@@ -1,17 +1,15 @@
+/* ---------- Light theme ---------- */
+
 .sidebar {
   background: var(--color-sidebar-light);
   border-right: 1px solid var(--color-border-light);
+  color: var(--color-text-light);
   width: 16rem;
   padding: 1rem;
   box-sizing: border-box;
   flex: 0 0 16rem;
   overflow-y: auto;
   height: 100%;
-}
-
-.app--dark .sidebar {
-  background: var(--color-sidebar-dark);
-  border-right: 1px solid var(--color-border-dark);
 }
 
 .sidebar__header {
@@ -41,27 +39,12 @@
   background: transparent;
   color: inherit;
   cursor: pointer;
-  transition: opacity 0.5s;
+  transition: brightness 0.5s;
 }
 
 .sidebar__button:hover {
-  background: #e5e7eb;
-  opacity: 50%;
-}
-
-.app--dark .sidebar__button:hover {
-  background: #374151;
-}
-
-.sidebar__button--active {
-  background: var(--color-accent-light);
-  color: #fff;
-  transition: opacity 0.5s;
-}
-
-.app--dark .sidebar__button--active {
-  background: var(--color-accent-dark);
-  color: #fff;
+  background: var(--color-border-light);
+  filter: brightness(1.1);
 }
 
 .sidebar__search-wrapper {
@@ -74,10 +57,11 @@
   width: 170px; /*TODO - FIX ME*/
   padding: 0.5rem 0.75rem 0.5rem 2.5rem;
   font-size: 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border-light);
   border-radius: 6px;
   outline: none;
-  background: #f9fafb;
+  background: var(--color-note-bg-light);
+  color: var(--color-note-text-light);
   transition: border 0.2s ease-in-out;
 }
 
@@ -91,16 +75,39 @@
   opacity: 0.6;
 }
 
+.app--light .sidebar__search:focus {
+  border-color: var(--color-accent-light);
+}
+
+/* ---------- Dark theme ---------- */
+
+.app--dark .sidebar {
+  background: var(--color-sidebar-dark);
+  border-right: 1px solid var(--color-border-dark);
+  color: var(--color-text-dark);
+}
+
+.app--dark .sidebar__button:hover {
+  background: var(--color-border-dark);
+}
+
+.sidebar__button--active {
+  background: var(--color-accent-light);
+  color: #fff;
+  transition: opacity 0.5s;
+}
+
+.app--dark .sidebar__button--active {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
 .app--dark .sidebar__search {
-  background: #1f2937;
-  border-color: #374151;
-  color: #f3f4f6;
+  background: var(--color-note-bg-dark);
+  border-color: var(--color-sidebar-dark);
+  color: var(--color-note-text-dark);
 }
 
 .app--dark .sidebar__search:focus {
   border-color: var(--color-border-dark);
-}
-
-.app--light .sidebar__search:focus {
-  border-color: var(--color-border-light);
 }

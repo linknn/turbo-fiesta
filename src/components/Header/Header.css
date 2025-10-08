@@ -64,3 +64,18 @@
 
   animation: rainbow 6s linear infinite, shadowPulse 2s ease-in-out infinite;
 }
+
+.header__menu-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header__menu-button {
+    display: block;
+  }
+}

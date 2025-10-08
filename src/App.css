@@ -45,6 +45,10 @@
   animation: matrixScroll 5s linear infinite;
 }
 
+.app__overlay {
+  display: none;
+}
+
 /* ---------- TODO button ---------- */
 .floating__button {
   position: fixed; /* stays in place when scrolling */
@@ -62,4 +66,27 @@
   cursor: pointer;
   z-index: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* slight shadow */
+}
+
+@media (max-width: 768px) {
+  .app__body {
+    flex-direction: column;
+  }
+
+  .app__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 150;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .app__overlay--active {
+    opacity: 1;
+    pointer-events: all;
+  }
 }

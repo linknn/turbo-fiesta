@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import Overlay from "./components/Overlay/Overlay";
@@ -6,7 +7,6 @@ import Overlay from "./components/Overlay/Overlay";
 import "./components/base/reset.css";
 import "./components/base/theme.css";
 import "./App.css";
-import Header from "./components/Header/Header";
 
 import { useNotes } from "./hooks/useNotes";
 import useThemePersistence from "./hooks/useThemePersistence";
@@ -59,6 +59,8 @@ export default function CheatSheetApp() {
     return () => clearInterval(interval);
   }, []);
 
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+
   return (
     <>
       <audio ref={audioRef} src={`${import.meta.env.BASE_URL}easter-egg.wav`} preload="auto" />
@@ -67,18 +69,30 @@ export default function CheatSheetApp() {
           devtoolsActive ? "app--matrix" : ""
         }`}
       >
-        <Header darkMode={darkMode} setDarkMode={setDarkMode} konamiActive={konamiActive} />
+        <Header
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          konamiActive={konamiActive}
+          onToggleSidebar={() => setIsMobileSidebarOpen((prev) => !prev)}
+        />
 
         <div className="app__body">
           <Sidebar
             groupedNotes={groupedNotes}
             activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
+            setActiveCategory={(category) => {
+              setActiveCategory(category);
+              setIsMobileSidebarOpen(false); // closes sidebar after selecting
+            }}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             konamiActive={konamiActive}
             devtoolsActive={devtoolsActive}
+            isMobileSidebarOpen={isMobileSidebarOpen}
           ></Sidebar>
+          {isMobileSidebarOpen && (
+            <div className="app__overlay" onClick={() => setIsMobileSidebarOpen(false)} />
+          )}
 
           <Main
             activeCategory={activeCategory}

@@ -7,16 +7,10 @@ export default function Sidebar({
   setActiveCategory,
   searchQuery,
   setSearchQuery,
+  isMobileSidebarOpen,
 }) {
   return (
-    <aside className="sidebar">
-      {/* <div className="sidebar__header">
-        <h2 className={`sidebar__title ${konamiActive ? "sidebar__title--rainbow" : ""}`}>
-          Cheat Sheet
-        </h2>
-        {children /* Theme toggle will be passed in here 
-      </div> */}
-
+    <aside className={`sidebar ${isMobileSidebarOpen ? "sidebar--open" : ""}`}>
       <div className="sidebar__search-wrapper">
         <span className="sidebar__search-icon">🔍</span>
         <input

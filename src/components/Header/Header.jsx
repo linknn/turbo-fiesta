@@ -2,9 +2,12 @@ import React from "react";
 import "./Header.css";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
-export default function Header({ darkMode, setDarkMode, konamiActive }) {
+export default function Header({ darkMode, setDarkMode, konamiActive, onToggleSidebar }) {
   return (
     <header className="header">
+      <button className="header__menu-button" onClick={onToggleSidebar} aria-label="Toggle menu">
+        ☰
+      </button>
       <h1 className={`header__title ${konamiActive ? "header__title--rainbow" : ""}`}>
         Cheat Sheet
       </h1>

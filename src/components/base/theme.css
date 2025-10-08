@@ -17,3 +17,58 @@
   --color-accent-dark: #f77f00; /* glowing orange accent */
   --color-border-dark: #5ec61a; /* muted dark border */
 }
+
+/* ---------- Light theme ---------- */
+.app--light {
+  background: radial-gradient(
+    circle at top left,
+    #fff4dc 0%,
+    /* pale parchment */ #f8e6c1 70%,
+    /* warm tan */ #ff7518 100% /* true pumpkin orange 🎃 */
+  );
+  color: var(--color-text-light);
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto; /* allow vertical scrolling */
+  overflow-x: hidden; /* still prevent sideways scroll */
+
+  /* ---------- Light Theme Scrollbar ---------- */
+  --scrollbar-track: #f8e8d0; /* light beige */
+  --scrollbar-thumb: #c67d4f; /* pumpkin orange */
+  --scrollbar-thumb-hover: #a55b2a; /* darker pumpkin */
+}
+
+.app--light::before {
+  content: "";
+  position: absolute;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Dark theme ---------- */
+.app--dark {
+  background: radial-gradient(circle at top left, #1a0b2e 0%, #0d1117 70%, #000 100%);
+  color: var(--color-text-dark);
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto; /* allow vertical scrolling */
+  overflow-x: hidden; /* still prevent sideways scroll */
+  /* ---------- Dark Theme Scrollbar ---------- */
+  --scrollbar-track: #1a0f1f; /* deep purple-black */
+  --scrollbar-thumb: #7d3ca6; /* neon purple */
+  --scrollbar-thumb-hover: #b56cff; /* bright purple */
+}
+
+.app--dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.15; /* stronger grain */
+  pointer-events: none;
+}

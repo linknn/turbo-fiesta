@@ -1,7 +1,7 @@
 import cssNotes from "../notes/css";
 import jsNotes from "../notes/javascript";
 import expressNotes from "../notes/express";
-import mongoNotes from "../notes/mongoDB";
+import databaseNotes from "../notes/database";
 import miscNotes from "../notes/misc";
 import bemNotes from "../notes/bem";
 import bashNotes from "../notes/git-bash";
@@ -18,7 +18,7 @@ export function useNotes() {
     },
     Backend: {
       "Error Handling": errorNotes,
-      MongoDB: mongoNotes,
+      Database: databaseNotes,
       "Id and Auth": authNotes,
       "Node & Express": expressNotes,
     },

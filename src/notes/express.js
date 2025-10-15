@@ -1,6 +1,4 @@
-const expressNotes = `
-
-NOTE: if you accidentally run npm un dev instead of npm run dev, running npm install should fix the packages you just deleted
+const expressNotes = `NOTE: if you accidentally run npm un dev instead of npm run dev, running npm install should fix the packages you just deleted
 
 router.get('/books', getBooks);
 router.post('/books', createBook);

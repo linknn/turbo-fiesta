@@ -64,5 +64,7 @@ expiresIn: '7d' // 7 days
 
 the strong secret key to sign JWT tokens should be kept in an environment variable, never commit your .env to the repo
 
+controllers hold your application behaviors
+
 `;
 export default authNotes;

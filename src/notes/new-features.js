@@ -7,8 +7,6 @@ refactor the notes into cards
 I'd like a home page that displays all notes by default
     Add favorites function that moves notes to the front of the line
 
-Make this responsive so i can view on mobile
-
 Add matrix to header
 Fix margin on main title
 
@@ -19,5 +17,10 @@ emoji for todo isnt centered and give it some hover effects
 change out all colors for root names for future theme changes
     find a way to have it rotate through themes based on time of year?
     make an interactive way to change the color schemes
+
+when you press enter on mobile in the search bar I want the sidebar to close
+When you search for notes, clicking on the note title takes you to that notes page
+    need search page to scroll on mobile
+    rewrite search tool to use regex
 `;
 export default featureNotes;

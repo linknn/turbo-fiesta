@@ -70,5 +70,8 @@ findOne
         .send({ message: INTERNAL_SERVER_ERROR.message });
     });
 };
+
+dont use err.message when handling errors this is helpful for hackers and the user doesnt need to know the actual error
+  can do console.error(err)
 `;
 export default errorNotes;

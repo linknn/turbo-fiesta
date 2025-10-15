@@ -69,5 +69,36 @@ const userSchema = new mongoose.Schema({
   about: String, // type: String
 });
 
+
+schema -> Attributes (data type/structure)
+  Car
+    plate (string)
+    year  (number)
+    model (string)
+    color (string)
+model -> floorplan / blueprint
+document -> an instance of a model
+
+
+
+Installation
+1. nodemon - used for hot reload (update package.json scripts)
+2. express - library for creating APIs
+3. cors - avoid communicaiton issues with diff domains
+4. db connector - mongo connector (mongoose)
+  npm i mongoose
+
+Coding
+1. add type: "module" into package.json (ES6 - import export)
+    ^^This step makes it so you use import instead of require
+2. import express
+3. create express app
+4. call listen function
+5. important: add json middleware!
+6. add cors
+7. add database connection
+8. add error middleware
+9. add routes/endpoints/paths (after the middlewares in the code)
+
 `;
 export default databaseNotes;

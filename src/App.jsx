@@ -60,6 +60,16 @@ export default function CheatSheetApp() {
   }, []);
 
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  // sidebar close mobile
+  useEffect(() => {
+    const handleKeyPress = (evt) => {
+      if (evt.key === "Enter" || (evt.key === "Escape" && isMobileSidebarOpen)) {
+        setIsMobileSidebarOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [isMobileSidebarOpen]);
 
   return (
     <>
@@ -91,7 +101,10 @@ export default function CheatSheetApp() {
             isMobileSidebarOpen={isMobileSidebarOpen}
           ></Sidebar>
           {isMobileSidebarOpen && (
-            <div className="app__overlay" onClick={() => setIsMobileSidebarOpen(false)} />
+            <div
+              className="overlay overlay--sidebar"
+              onClick={() => setIsMobileSidebarOpen(false)}
+            />
           )}
 
           <Main

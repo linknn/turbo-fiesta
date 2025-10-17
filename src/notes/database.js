@@ -100,5 +100,8 @@ Coding
 8. add error middleware
 9. add routes/endpoints/paths (after the middlewares in the code)
 
+
+
+
 `;
 export default databaseNotes;

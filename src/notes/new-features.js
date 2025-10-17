@@ -22,5 +22,9 @@ when you press enter on mobile in the search bar I want the sidebar to close
 When you search for notes, clicking on the note title takes you to that notes page
     need search page to scroll on mobile
     rewrite search tool to use regex
+
+add text editor
+
+move notes to txt?
 `;
 export default featureNotes;

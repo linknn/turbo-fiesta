@@ -36,3 +36,10 @@
 .overlay__button:hover {
   filter: brightness(1.1);
 }
+
+.overlay--sidebar {
+  background: rgba(0, 0, 0, 0.4); /* lighter dim than modal overlay */
+  justify-content: flex-start; /* prevent content centering */
+  align-items: stretch;
+  z-index: 150; /* behind sidebar but above app content */
+}

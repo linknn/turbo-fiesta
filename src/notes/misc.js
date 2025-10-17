@@ -32,5 +32,16 @@ The match() method of String values retrieves the result of matching this string
   could be used as a validation/search tool (like if a string is an email)
     joi // yup // zod alternative valdator tools can be found in npm
       check weekly downloads to see how relevant a package is
+
+
+https://www.jwt.io/
+debug webtokens
+
+turning things into variables can help with debugging
+
+magic numbers variables
+  60*30*1000
+  1000*60*30
+  instead of just using 
 `;
 export default miscNotes;

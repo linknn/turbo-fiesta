@@ -20,21 +20,21 @@
 }
 
 /* ---------- Matrix easter egg ---------- */
-@keyframes matrixScroll {
+/* @keyframes matrixScroll {
   0% {
     background-position: 0 0;
   }
   100% {
     background-position: 0 100%;
   }
-}
+} */
 
-.app--matrix::before {
+/* .app--matrix::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none; /* don’t block clicks */
-  background-image: repeating-linear-gradient(
+/* background-image: repeating-linear-gradient(
     to bottom,
     rgba(0, 255, 0, 0.15) 0px,
     rgba(0, 255, 0, 0.15) 2px,
@@ -47,7 +47,7 @@
 
 .app__overlay {
   display: none;
-}
+} */
 
 /* ---------- TODO button ---------- */
 .floating__button {

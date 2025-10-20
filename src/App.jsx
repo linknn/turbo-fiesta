@@ -74,11 +74,7 @@ export default function CheatSheetApp() {
   return (
     <>
       <audio ref={audioRef} src={`${import.meta.env.BASE_URL}easter-egg.wav`} preload="auto" />
-      <div
-        className={`app ${darkMode ? "app app--dark" : "app app--light"} ${
-          devtoolsActive ? "app--matrix" : ""
-        }`}
-      >
+      <div className={`app ${darkMode ? "app app--dark" : "app app--light"}`}>
         <Header
           darkMode={darkMode}
           setDarkMode={setDarkMode}

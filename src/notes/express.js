@@ -44,6 +44,14 @@ app.listen(PORT, () => {
 });
 
 
+If you decide to use relational databases for your application, you'll need to choose an appropriate database management system (DBMS) and use its Node.js driver to connect it to your app.
+
+We recommend using PostgreSQL (or Postgres), a free and open-source relational database management system. PostgreSQL is widely used by companies for their database needs.
+
+Install the npm module called pg-promise first:
+
+npm install pg-promise
+
 `;
 
 export default expressNotes;

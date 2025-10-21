@@ -101,7 +101,18 @@ Coding
 9. add routes/endpoints/paths (after the middlewares in the code)
 
 
+key word "token" can be anything and often is like tk or tkn or t
 
+
+  validating a token only takes place on the backend in auth middleware as a function
+    all routes use the same token validator but could use different tokens
+  if (response ===200) => valid
+    else X
+
+    auth middleware auth = req.headers
+        bearertoken goes inside the token validator functionas authorization
+
+  backend holds the code we dont want readily available to hackers
 
 `;
 export default databaseNotes;

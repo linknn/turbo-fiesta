@@ -166,6 +166,14 @@ app.listen(PORT, () => {
 });
 
 
+If you decide to use relational databases for your application, you'll need to choose an appropriate database management system (DBMS) and use its Node.js driver to connect it to your app.
+
+We recommend using PostgreSQL (or Postgres), a free and open-source relational database management system. PostgreSQL is widely used by companies for their database needs.
+
+Install the npm module called pg-promise first:
+
+npm install pg-promise
+
 `,W0=`Find all documents:
 {}
 
@@ -269,7 +277,18 @@ Coding
 9. add routes/endpoints/paths (after the middlewares in the code)
 
 
+key word "token" can be anything and often is like tk or tkn or t
 
+
+  validating a token only takes place on the backend in auth middleware as a function
+    all routes use the same token validator but could use different tokens
+  if (response ===200) => valid
+    else X
+
+    auth middleware auth = req.headers
+        bearertoken goes inside the token validator functionas authorization
+
+  backend holds the code we dont want readily available to hackers
 
 `,$0=`res.status(404).send({message: 'User not found'});
 
@@ -279,14 +298,6 @@ json-server --watch db.json --id _id --port 3001
 --save-dev is used with npm install and adds new packages to devDependencies in the json
   these tools are just to assist the developer not for the client
 
-
-If you decide to use relational databases for your application, you'll need to choose an appropriate database management system (DBMS) and use its Node.js driver to connect it to your app.
-
-We recommend using PostgreSQL (or Postgres), a free and open-source relational database management system. PostgreSQL is widely used by companies for their database needs.
-
-Install the npm module called pg-promise first:
-
-npm install pg-promise
 
 in a vite project add --open to the dev script for npm run dev to suto open in browser
 
@@ -316,6 +327,12 @@ magic numbers variables
   60*30*1000
   1000*60*30
   instead of just using 
+
+
+
+
+
+  finish sp13 regular expressions and go back over ch07
 `,F0=`block__element → double underscore separates an element of a block.
 
 block--modifier → double hyphen separates a modifier of a block.
@@ -561,4 +578,4 @@ the strong secret key to sign JWT tokens should be kept in an environment variab
 controllers hold your application behaviors
 
 `;function em(){const A={Frontend:{CSS:w0,BEM:F0,JavaScript:J0},Backend:{"Error Handling":P0,Database:W0,"Id and Auth":tm,"Node & Express":k0},Miscellaneous:{"Git Bash":I0,Misc:$0}},B={...(m=>Object.values(m).reduce((U,G)=>({...U,...G}),{}))(A),ToDo:lm};return{groupedNotes:A,notes:B}}function am(A){kl.useEffect(()=>{localStorage.setItem("theme",A?"dark":"light")},[A])}function um(A,X){kl.useEffect(()=>{const B=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight"];let m=[];const U=G=>{m=[...m,G.key].slice(-B.length),JSON.stringify(m)===JSON.stringify(B)&&(console.log("🎉 You're a nerd!"),X.current?.play(),A(!0))};return window.addEventListener("keydown",U),()=>window.removeEventListener("keydown",U)},[A,X])}function nm(A){kl.useEffect(()=>{let X=!1;const B=160,U=setInterval(()=>{const G=window.outerWidth-window.innerWidth,J=window.outerHeight-window.innerHeight;(G>B||J>B)&&!X?(X=!0,console.log("%cShh code is sleeping here 🤫😴💤","color: cyan; font-size: 18px; font-weight: bold;"),A(!0)):G<=B&&J<=B&&X&&(X=!1,A(!1))},1e3);return()=>clearInterval(U)},[A])}function im(){const{groupedNotes:A,notes:X}=em(),[B,m]=kl.useState(()=>localStorage.getItem("theme")==="dark"),[U,G]=kl.useState("CSS"),[J,gl]=kl.useState(""),[D,T]=kl.useState(!1),[N,il]=kl.useState(!1),P=kl.useRef(null);am(B),um(T,P),nm(il);const zl=J?(()=>{const ll={},xl=J.toLowerCase();return Object.entries(X).forEach(([k,Cl])=>{const Hl=Cl.split(`
-`).filter(Ql=>Ql.toLowerCase().includes(xl));Hl.length>0&&(ll[k]=Hl)}),ll})():null,[Wl,Ml]=kl.useState(!1);kl.useEffect(()=>{const ll=setInterval(()=>{Ml(!0)},18e5);return()=>clearInterval(ll)},[]);const[it,Zl]=kl.useState(!1);return kl.useEffect(()=>{const ll=xl=>{(xl.key==="Enter"||xl.key==="Escape"&&it)&&Zl(!1)};return window.addEventListener("keydown",ll),()=>window.removeEventListener("keydown",ll)},[it]),Q.jsxs(Q.Fragment,{children:[Q.jsx("audio",{ref:P,src:"/turbo-fiesta/easter-egg.wav",preload:"auto"}),Q.jsxs("div",{className:`app ${B?"app app--dark":"app app--light"} ${N?"app--matrix":""}`,children:[Q.jsx(Z0,{darkMode:B,setDarkMode:m,konamiActive:D,onToggleSidebar:()=>Zl(ll=>!ll)}),Q.jsxs("div",{className:"app__body",children:[Q.jsx(V0,{groupedNotes:A,activeCategory:U,setActiveCategory:ll=>{G(ll),Zl(!1)},searchQuery:J,setSearchQuery:gl,konamiActive:D,devtoolsActive:N,isMobileSidebarOpen:it}),it&&Q.jsx("div",{className:"overlay overlay--sidebar",onClick:()=>Zl(!1)}),Q.jsx(L0,{activeCategory:U,notes:X,searchQuery:J,searchResults:zl})]}),Q.jsx("button",{className:`floating__button ${U==="ToDo"?"floating__button--active":""}`,"aria-label":"Show future features",onClick:()=>{gl(""),G("ToDo")},children:"📝"}),Q.jsx(K0,{show:Wl,onClose:()=>Ml(!1)})]})]})}Q0.createRoot(document.getElementById("root")).render(Q.jsx(x0.StrictMode,{children:Q.jsx(im,{})}));
+`).filter(Ql=>Ql.toLowerCase().includes(xl));Hl.length>0&&(ll[k]=Hl)}),ll})():null,[Wl,Ml]=kl.useState(!1);kl.useEffect(()=>{const ll=setInterval(()=>{Ml(!0)},18e5);return()=>clearInterval(ll)},[]);const[it,Zl]=kl.useState(!1);return kl.useEffect(()=>{const ll=xl=>{(xl.key==="Enter"||xl.key==="Escape"&&it)&&Zl(!1)};return window.addEventListener("keydown",ll),()=>window.removeEventListener("keydown",ll)},[it]),Q.jsxs(Q.Fragment,{children:[Q.jsx("audio",{ref:P,src:"/turbo-fiesta/easter-egg.wav",preload:"auto"}),Q.jsxs("div",{className:`app ${B?"app app--dark":"app app--light"}`,children:[Q.jsx(Z0,{darkMode:B,setDarkMode:m,konamiActive:D,onToggleSidebar:()=>Zl(ll=>!ll)}),Q.jsxs("div",{className:"app__body",children:[Q.jsx(V0,{groupedNotes:A,activeCategory:U,setActiveCategory:ll=>{G(ll),Zl(!1)},searchQuery:J,setSearchQuery:gl,konamiActive:D,devtoolsActive:N,isMobileSidebarOpen:it}),it&&Q.jsx("div",{className:"overlay overlay--sidebar",onClick:()=>Zl(!1)}),Q.jsx(L0,{activeCategory:U,notes:X,searchQuery:J,searchResults:zl})]}),Q.jsx("button",{className:`floating__button ${U==="ToDo"?"floating__button--active":""}`,"aria-label":"Show future features",onClick:()=>{gl(""),G("ToDo")},children:"📝"}),Q.jsx(K0,{show:Wl,onClose:()=>Ml(!1)})]})]})}Q0.createRoot(document.getElementById("root")).render(Q.jsx(x0.StrictMode,{children:Q.jsx(im,{})}));

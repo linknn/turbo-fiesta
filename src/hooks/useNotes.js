@@ -1,6 +1,7 @@
 import cssNotes from "../notes/css";
 import jsNotes from "../notes/javascript";
 import expressNotes from "../notes/express";
+import nodeNotes from "../notes/node";
 import databaseNotes from "../notes/database";
 import miscNotes from "../notes/misc";
 import bemNotes from "../notes/bem";
@@ -20,7 +21,8 @@ export function useNotes() {
       "Error Handling": errorNotes,
       Database: databaseNotes,
       "Id and Auth": authNotes,
-      "Node & Express": expressNotes,
+      Express: expressNotes,
+      Node: nodeNotes,
     },
     Miscellaneous: {
       "Git Bash": bashNotes,

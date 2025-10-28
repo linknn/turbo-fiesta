@@ -62,7 +62,7 @@ You can edit the notes and watch the changes update live.
 
 ## 🎨 Global Theme System
 
-The app uses a global color scheme defined in `:root` within `App.css`.  
+The app uses a global color scheme defined in `:root` within `theme.css`.  
 This provides a **shared palette of CSS variables** for both light and dark themes, making it easy to adjust or expand the look of the entire application.
 
 Example snippet:

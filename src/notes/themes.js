@@ -1,19 +1,17 @@
+const themeNotes = `
 :root {
   /* ===== Light Theme (Fall / Pumpkin) ===== */
-  --color-bg-light: #f8e6c1;
-  /* Global background — main app body (App.jsx .app--light) */
-  --color-sidebar-light: #fff4dc;
-  /* Sidebar background (Sidebar.css .sidebar) */
-  --color-text-light: #1a1a1a;
-  /* Global text color for light mode — applies to app, notes text, headers */
-  --color-note-bg-light: #dba87e;
-  /* Background for note content area (.main__notes in Main.css) */
-  --color-note-text-light: #1a1a1a;
-  /* Text color inside notes (.main__notes) */
-  --color-accent-light: #e07a5f;
-  /* Accent color — section titles, hover states, active sidebar buttons */
-  --color-border-light: #d6b18a;
-  /* Borders — sidebar, header bottom border, input outlines */
+  --color-bg-light: #f8e6c1; /* warm parchment background */
+  --color-sidebar-light: #fff4dc; /* pale pumpkin sidebar */
+  --color-text-light: #1a1a1a; /* dark text */
+  --color-note-bg-light: #dba87e; /* warm tan notes */
+  --color-note-text-light: #1a1a1a; /* dark readable text */
+  --color-accent-light: #e07a5f; /* pumpkin orange accent */
+  --color-border-light: #d6b18a; /* subtle border */
+  /* ---------- Light Theme Scrollbar ---------- */
+  --scrollbar-track: #f8e8d0; /* light beige */
+  --scrollbar-thumb: #c67d4f; /* pumpkin orange */
+  --scrollbar-thumb-hover: #a55b2a; /* darker pumpkin */
 
   /* ===== Dark Theme (Halloween Night) ===== */
   --color-bg-dark: #0d1117; /* near-black deep night */
@@ -23,6 +21,11 @@
   --color-note-text-dark: #f4f1de; /* light readable text */
   --color-accent-dark: #f77f00; /* glowing orange accent */
   --color-border-dark: #5ec61a; /* muted dark border */
+
+  /* ---------- Dark Theme Scrollbar ---------- */
+  --scrollbar-track: #1a0f1f; /* deep purple-black */
+  --scrollbar-thumb: #7d3ca6; /* neon purple */
+  --scrollbar-thumb-hover: #b56cff; /* bright purple */
 }
 
 /* ---------- Light theme ---------- */
@@ -38,11 +41,6 @@
   overflow: hidden;
   overflow-y: auto; /* allow vertical scrolling */
   overflow-x: hidden; /* still prevent sideways scroll */
-
-  /* ---------- Light Theme Scrollbar ---------- */
-  --scrollbar-track: #f8e8d0; /* light beige */
-  --scrollbar-thumb: #c67d4f; /* pumpkin orange */
-  --scrollbar-thumb-hover: #a55b2a; /* darker pumpkin */
 }
 
 .app--light::before {
@@ -62,10 +60,6 @@
   overflow: hidden;
   overflow-y: auto; /* allow vertical scrolling */
   overflow-x: hidden; /* still prevent sideways scroll */
-  /* ---------- Dark Theme Scrollbar ---------- */
-  --scrollbar-track: #1a0f1f; /* deep purple-black */
-  --scrollbar-thumb: #7d3ca6; /* neon purple */
-  --scrollbar-thumb-hover: #b56cff; /* bright purple */
 }
 
 .app--dark::before {
@@ -79,3 +73,6 @@
   opacity: 0.15; /* stronger grain */
   pointer-events: none;
 }
+
+`;
+export default themeNotes;

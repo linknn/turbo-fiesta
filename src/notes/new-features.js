@@ -25,6 +25,6 @@ When you search for notes, clicking on the note title takes you to that notes pa
 
 add text editor
 
-move notes to txt?
+move notes to txt? maybe md
 `;
 export default featureNotes;

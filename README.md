@@ -4,7 +4,7 @@ A lightweight, themeable cheat sheet app built with React — designed for quick
 
 ✨ **Now with grouped notes, search, and mobile support!**
 
-🔗 **Live Demo:** <a href="https://your-deployment-link-here.com" target="_blank" rel="noopener noreferrer">View the Deployed App</a>
+🔗 **Live Demo:** <a href="https://linknn.github.io/turbo-fiesta/" target="_blank" rel="noopener noreferrer">View the Deployed App</a>
 
 ---
 

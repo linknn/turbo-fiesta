@@ -12,6 +12,8 @@ status codes helpers
 404
 422 not process entity
 
+res.status(404).send({message: 'User not found'});
+
 
 //400 Bad Request is for client-side input errors (e.g., missing required fields, invalid formats)
 const BAD_REQUEST = {

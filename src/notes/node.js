@@ -28,6 +28,14 @@ npm install pg-promise
 morgan
   middleware logger for incoming requests
 
+
+json-server --watch db.json --id _id --port 3001
+  adds json file and sets the port to 3001
+
+--save-dev is used with npm install and adds new packages to devDependencies in the json
+  these tools are just to assist the developer not for the client
+
+
   `;
 
 export default nodeNotes;

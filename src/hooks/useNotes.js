@@ -9,6 +9,8 @@ import bashNotes from "../notes/git-bash";
 import errorNotes from "../notes/error-handling";
 import featureNotes from "../notes/new-features";
 import authNotes from "../notes/id-auth";
+import debugNotes from "../notes/debugging";
+import regexNotes from "../notes/regex";
 
 export function useNotes() {
   const groupedNotes = {
@@ -24,9 +26,11 @@ export function useNotes() {
       Express: expressNotes,
       Node: nodeNotes,
     },
-    Miscellaneous: {
+    Utilities: {
       "Git Bash": bashNotes,
-      Misc: miscNotes,
+      Debugging: debugNotes,
+      "Regular Expressions": regexNotes,
+      "Junk drawer": miscNotes,
     },
   };
 

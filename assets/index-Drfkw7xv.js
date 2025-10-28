@@ -217,6 +217,14 @@ npm install pg-promise
 morgan
   middleware logger for incoming requests
 
+
+json-server --watch db.json --id _id --port 3001
+  adds json file and sets the port to 3001
+
+--save-dev is used with npm install and adds new packages to devDependencies in the json
+  these tools are just to assist the developer not for the client
+
+
   `,$0=`Find all documents:
 {}
 
@@ -333,36 +341,15 @@ key word "token" can be anything and often is like tk or tkn or t
 
   backend holds the code we dont want readily available to hackers
 
-`,F0=`res.status(404).send({message: 'User not found'});
-
-json-server --watch db.json --id _id --port 3001
-  adds json file and sets the port to 3001
-
---save-dev is used with npm install and adds new packages to devDependencies in the json
-  these tools are just to assist the developer not for the client
-
+`,F0=`
 
 in a vite project add --open to the dev script for npm run dev to suto open in browser
 
-  // eslint-disable-next-line no-unused-vars
-this comment tells eslint when a variable looks unused to just ignore it
-
+  
 url is more web stuff uri is more local
 
 when usisng import file type ext is necessary (.js .txt .jsx etc) with require imports the ext is omitted
 
-
------------Regular expressions----------
-https://regex101.com/
-The match() method of String values retrieves the result of matching this string against a regular expression
-  JS match method used with regex
-  could be used as a validation/search tool (like if a string is an email)
-    joi // yup // zod alternative valdator tools can be found in npm
-      check weekly downloads to see how relevant a package is
-
-
-https://www.jwt.io/
-debug webtokens
 
 turning things into variables can help with debugging
 
@@ -462,6 +449,8 @@ status codes helpers
 403
 404
 422 not process entity
+
+res.status(404).send({message: 'User not found'});
 
 
 //400 Bad Request is for client-side input errors (e.g., missing required fields, invalid formats)
@@ -620,5 +609,18 @@ the strong secret key to sign JWT tokens should be kept in an environment variab
 
 controllers hold your application behaviors
 
-`;function am(){const A={Frontend:{CSS:K0,BEM:I0,JavaScript:J0},Backend:{"Error Handling":tm,Database:$0,"Id and Auth":em,Express:k0,Node:W0},Miscellaneous:{"Git Bash":P0,Misc:F0}},B={...(m=>Object.values(m).reduce((U,C)=>({...U,...C}),{}))(A),ToDo:lm};return{groupedNotes:A,notes:B}}function um(A){kt.useEffect(()=>{localStorage.setItem("theme",A?"dark":"light")},[A])}function nm(A,X){kt.useEffect(()=>{const B=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight"];let m=[];const U=C=>{m=[...m,C.key].slice(-B.length),JSON.stringify(m)===JSON.stringify(B)&&(console.log("🎉 You're a nerd!"),X.current?.play(),A(!0))};return window.addEventListener("keydown",U),()=>window.removeEventListener("keydown",U)},[A,X])}function im(A){kt.useEffect(()=>{let X=!1;const B=160,U=setInterval(()=>{const C=window.outerWidth-window.innerWidth,J=window.outerHeight-window.innerHeight;(C>B||J>B)&&!X?(X=!0,console.log("%cShh code is sleeping here 🤫😴💤","color: cyan; font-size: 18px; font-weight: bold;"),A(!0)):C<=B&&J<=B&&X&&(X=!1,A(!1))},1e3);return()=>clearInterval(U)},[A])}function cm(){const{groupedNotes:A,notes:X}=am(),[B,m]=kt.useState(()=>localStorage.getItem("theme")==="dark"),[U,C]=kt.useState("CSS"),[J,gt]=kt.useState(""),[D,E]=kt.useState(!1),[N,it]=kt.useState(!1),P=kt.useRef(null);um(B),nm(E,P),im(it);const zt=J?(()=>{const tt={},xt=J.toLowerCase();return Object.entries(X).forEach(([k,Gt])=>{const Ht=Gt.split(`
-`).filter(Qt=>Qt.toLowerCase().includes(xt));Ht.length>0&&(tt[k]=Ht)}),tt})():null,[Wt,Mt]=kt.useState(!1);kt.useEffect(()=>{const tt=setInterval(()=>{Mt(!0)},18e5);return()=>clearInterval(tt)},[]);const[il,Zt]=kt.useState(!1);return kt.useEffect(()=>{const tt=xt=>{(xt.key==="Enter"||xt.key==="Escape"&&il)&&Zt(!1)};return window.addEventListener("keydown",tt),()=>window.removeEventListener("keydown",tt)},[il]),Q.jsxs(Q.Fragment,{children:[Q.jsx("audio",{ref:P,src:"/turbo-fiesta/easter-egg.wav",preload:"auto"}),Q.jsxs("div",{className:`app ${B?"app app--dark":"app app--light"}`,children:[Q.jsx(Z0,{darkMode:B,setDarkMode:m,konamiActive:D,onToggleSidebar:()=>Zt(tt=>!tt)}),Q.jsxs("div",{className:"app__body",children:[Q.jsx(L0,{groupedNotes:A,activeCategory:U,setActiveCategory:tt=>{C(tt),Zt(!1)},searchQuery:J,setSearchQuery:gt,konamiActive:D,devtoolsActive:N,isMobileSidebarOpen:il}),il&&Q.jsx("div",{className:"overlay overlay--sidebar",onClick:()=>Zt(!1)}),Q.jsx(V0,{activeCategory:U,notes:X,searchQuery:J,searchResults:zt})]}),Q.jsx("button",{className:`floating__button ${U==="ToDo"?"floating__button--active":""}`,"aria-label":"Show future features",onClick:()=>{gt(""),C("ToDo")},children:"📝"}),Q.jsx(w0,{show:Wt,onClose:()=>Mt(!1)})]})]})}Q0.createRoot(document.getElementById("root")).render(Q.jsx(x0.StrictMode,{children:Q.jsx(cm,{})}));
+`,am=`
+// eslint-disable-next-line no-unused-vars
+this comment tells eslint when a variable looks unused to just ignore it
+
+https://www.jwt.io/
+debug webtokens
+`,um=`-----------Regular expressions----------
+https://regex101.com/
+The match() method of String values retrieves the result of matching this string against a regular expression
+  JS match method used with regex
+  could be used as a validation/search tool (like if a string is an email)
+    joi // yup // zod alternative valdator tools can be found in npm
+      check weekly downloads to see how relevant a package is
+      `;function nm(){const A={Frontend:{CSS:K0,BEM:I0,JavaScript:J0},Backend:{"Error Handling":tm,Database:$0,"Id and Auth":em,Express:k0,Node:W0},Utilities:{"Git Bash":P0,Debugging:am,"Regular Expressions":um,"Junk drawer":F0}},B={...(m=>Object.values(m).reduce((U,C)=>({...U,...C}),{}))(A),ToDo:lm};return{groupedNotes:A,notes:B}}function im(A){kt.useEffect(()=>{localStorage.setItem("theme",A?"dark":"light")},[A])}function cm(A,X){kt.useEffect(()=>{const B=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight"];let m=[];const U=C=>{m=[...m,C.key].slice(-B.length),JSON.stringify(m)===JSON.stringify(B)&&(console.log("🎉 You're a nerd!"),X.current?.play(),A(!0))};return window.addEventListener("keydown",U),()=>window.removeEventListener("keydown",U)},[A,X])}function fm(A){kt.useEffect(()=>{let X=!1;const B=160,U=setInterval(()=>{const C=window.outerWidth-window.innerWidth,J=window.outerHeight-window.innerHeight;(C>B||J>B)&&!X?(X=!0,console.log("%cShh code is sleeping here 🤫😴💤","color: cyan; font-size: 18px; font-weight: bold;"),A(!0)):C<=B&&J<=B&&X&&(X=!1,A(!1))},1e3);return()=>clearInterval(U)},[A])}function sm(){const{groupedNotes:A,notes:X}=nm(),[B,m]=kt.useState(()=>localStorage.getItem("theme")==="dark"),[U,C]=kt.useState("CSS"),[J,gt]=kt.useState(""),[D,E]=kt.useState(!1),[N,it]=kt.useState(!1),P=kt.useRef(null);im(B),cm(E,P),fm(it);const zt=J?(()=>{const tt={},xt=J.toLowerCase();return Object.entries(X).forEach(([k,Gt])=>{const Ht=Gt.split(`
+`).filter(Qt=>Qt.toLowerCase().includes(xt));Ht.length>0&&(tt[k]=Ht)}),tt})():null,[Wt,Mt]=kt.useState(!1);kt.useEffect(()=>{const tt=setInterval(()=>{Mt(!0)},18e5);return()=>clearInterval(tt)},[]);const[il,Zt]=kt.useState(!1);return kt.useEffect(()=>{const tt=xt=>{(xt.key==="Enter"||xt.key==="Escape"&&il)&&Zt(!1)};return window.addEventListener("keydown",tt),()=>window.removeEventListener("keydown",tt)},[il]),Q.jsxs(Q.Fragment,{children:[Q.jsx("audio",{ref:P,src:"/turbo-fiesta/easter-egg.wav",preload:"auto"}),Q.jsxs("div",{className:`app ${B?"app app--dark":"app app--light"}`,children:[Q.jsx(Z0,{darkMode:B,setDarkMode:m,konamiActive:D,onToggleSidebar:()=>Zt(tt=>!tt)}),Q.jsxs("div",{className:"app__body",children:[Q.jsx(L0,{groupedNotes:A,activeCategory:U,setActiveCategory:tt=>{C(tt),Zt(!1)},searchQuery:J,setSearchQuery:gt,konamiActive:D,devtoolsActive:N,isMobileSidebarOpen:il}),il&&Q.jsx("div",{className:"overlay overlay--sidebar",onClick:()=>Zt(!1)}),Q.jsx(V0,{activeCategory:U,notes:X,searchQuery:J,searchResults:zt})]}),Q.jsx("button",{className:`floating__button ${U==="ToDo"?"floating__button--active":""}`,"aria-label":"Show future features",onClick:()=>{gt(""),C("ToDo")},children:"📝"}),Q.jsx(w0,{show:Wt,onClose:()=>Mt(!1)})]})]})}Q0.createRoot(document.getElementById("root")).render(Q.jsx(x0.StrictMode,{children:Q.jsx(sm,{})}));

@@ -4,7 +4,7 @@ A lightweight, themeable cheat sheet app built with React — designed for quick
 
 ✨ **Now with grouped notes, search, and mobile support!**
 
-🔗 **Live Demo:** [View the Deployed App](https://linknn.github.io/turbo-fiesta/)
+🔗 **Live Demo:** <a href="https://your-deployment-link-here.com" target="_blank" rel="noopener noreferrer">View the Deployed App</a>
 
 ---
 
@@ -46,7 +46,7 @@ You can edit the notes and watch the changes update live.
 
 ---
 
-🛠️ How to Use
+## 🛠️ How to Use
 
 - Use the sidebar to navigate between note categories.
 
@@ -74,6 +74,8 @@ Example snippet:
   --color-accent-light: #e07a5f;
   --color-accent-dark: #f77f00;
 }
+```
+
 These CSS variables can be accessed from any component, ensuring a consistent visual design.
 You can easily update them or introduce new seasonal color schemes.
 
@@ -81,13 +83,13 @@ You can easily update them or introduce new seasonal color schemes.
 
 ---
 
-📁 Notes
+## 📁 Notes
 
 The cheat sheet content is stored in the notes directory. You can easily add new categories by creating files here and importing to the useNotes hook.
 
 ---
 
-🧑‍💻 Tech Stack
+## 🧑‍💻 Tech Stack
 
 ⚛️ React (Vite)
 
@@ -96,4 +98,3 @@ The cheat sheet content is stored in the notes directory. You can easily add new
 🧠 JavaScript (ES6+)
 
 💾 LocalStorage for theme persistence
-```
